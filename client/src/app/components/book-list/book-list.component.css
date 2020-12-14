@@ -1,0 +1,43 @@
+.pull-right {
+    float: right;
+}
+
+button {
+    width: 90px;
+    margin: 5px;
+}
+
+mat-cell > span.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+mat-table >>> mat-cell:last-of-type, mat-table >>> mat-header-cell:last-of-type {
+    padding: 0;
+}
+
+.mat-column-id {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.mat-column-title {
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.mat-column-author {
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.mat-column-note {
+    min-width: 500px;
+    max-width: calc(100% - 750px);
+}
+
+.mat-column-operation {
+    min-width: 200px;
+    max-width: 200px;
+}

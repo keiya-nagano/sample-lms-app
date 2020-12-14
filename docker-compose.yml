@@ -1,0 +1,14 @@
+version: "3"
+services:
+  client:
+    build: ./client
+    image: sample-lms-app_client:1.0
+    container_name: sample-lms-app_client
+    ports:
+      - 80:80
+  server:
+    build: ./server
+    image: sample-lms-app_server:1.0
+    container_name: sample-lms-app_server
+    ports:
+      - 8000:8000

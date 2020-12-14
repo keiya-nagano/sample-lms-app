@@ -1,0 +1,38 @@
+apiVersion: 2018-10-01
+name: SampleLMSAppACG
+location: japaneast
+properties:
+  containers:
+  - name: client
+    properties:
+      image: samplelmsapp.azurecr.io/sample-lms-app_client:1.0
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1
+      ports:
+      - port: 80
+        protocol: TCP
+  - name: server
+    properties:
+      image: samplelmsapp.azurecr.io/sample-lms-app_server:1.0
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1
+      ports:
+      - port: 8000
+        protocol: TCP
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: tcp
+      port: 80
+    - protocol: tcp
+      port: 8000
+    dnsNameLabel: sample-lsm-app
+  imageRegistryCredentials:
+  - server: samplelmsapp.azurecr.io
+    username: REGISTRY_USER_NAME
+    password: REGISTRY_PASSWORD

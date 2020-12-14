@@ -1,0 +1,30 @@
+mat-card {
+    width: 50%;
+    min-width: 500px;
+    max-width: 800px;
+}
+
+mat-card-content {
+    padding: 15px;
+}
+
+mat-card-content div {
+    margin: 10px 0;
+}
+
+mat-card-actions {
+    padding: 0 15px;
+    text-align: end;
+}
+
+mat-card-actions button {
+    width: 90px;
+}
+
+mat-form-field.half-width {
+    width: 50%;
+}
+
+mat-form-field.full-width {
+    width: 100%;
+}

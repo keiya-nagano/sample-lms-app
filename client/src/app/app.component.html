@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <span>Library Management System</span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<div class="screen-loader-wall" *ngIf="loadingService.isLoading()">
+  <div class="screen-loader">Loading...</div>
+</div>

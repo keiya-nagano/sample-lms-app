@@ -1,0 +1,53 @@
+<div class="containt">
+    <div class="containt-header">
+        <h2>Book
+            <span *ngIf="isRegister"> Register</span>
+            <span *ngIf="!isRegister"> Detail</span>
+        </h2>
+    </div>
+    <mat-card>
+        <mat-card-content>
+            <div>
+                <mat-form-field class="half-width">
+                    <mat-label>Title</mat-label>
+                    <input matInput [formControl]="titleControl">
+                    <button mat-button *ngIf="titleControl.value" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="titleControl.setValue(''); titleControl.updateValueAndValidity();">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="titleControl.invalid">This field is required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="half-width">
+                    <mat-label>Author</mat-label>
+                    <input matInput [formControl]="authorControl">
+                    <button mat-button *ngIf="authorControl.value" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="authorControl.setValue(''); authorControl.updateValueAndValidity();">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="authorControl.invalid">This field is required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="full-width">
+                    <mat-label>Note</mat-label>
+                    <textarea matInput [formControl]="noteControl" rows="5"></textarea>
+                    <button mat-button *ngIf="noteControl.value" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="noteControl.setValue(''); noteControl.updateValueAndValidity();">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="noteControl.invalid">This input is too long.</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="actionByButton()"
+                [disabled]="titleControl.invalid || authorControl.invalid || noteControl.invalid">
+                <span *ngIf="isRegister">Register</span>
+                <span *ngIf="!isRegister">Update</span>
+            </button>
+            <button mat-raised-button (click)="back()">Back</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
